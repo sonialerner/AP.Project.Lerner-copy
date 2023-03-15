@@ -11,12 +11,17 @@ struct DetailView: View {
     var body: some View {
         VStack {
             HStack {
+                //refactor with list name
                 Text("ToDo List")
                     .font(.system(size: 25))
                     .padding(30)
                 
                 Spacer()
             }
+            
+            //for each loop here
+            ListItem()
+                .padding(.horizontal)
             Spacer()
         }
     }

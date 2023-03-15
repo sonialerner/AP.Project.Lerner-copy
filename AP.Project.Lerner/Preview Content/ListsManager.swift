@@ -7,3 +7,6 @@
 
 import Foundation
 
+// isChecked {
+//    remove from list
+// }
