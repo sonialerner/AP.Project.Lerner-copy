@@ -39,11 +39,16 @@ struct ContentView: View {
                 }
                 
                 //click on specific lists rather than seeing all the lists
-                Rectangle()
-                    .frame(height: 200)
-                    .foregroundColor(Color("AccentColor"))
-                    .cornerRadius(20)
-                    .shadow(radius: 2)
+                VStack{
+                    HStack{
+                        //categories here
+                        Text("Placeholder")
+                    }
+                }
+                .frame(width: 360, height: 220)
+                .background(Color("AccentColor"))
+                .cornerRadius(20)
+                .shadow(radius: 2)
                 
                 List(0..<allItems.count, id: \.self) { index in
                     ListCard(listItem: allItems[index])
