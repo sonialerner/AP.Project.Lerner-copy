@@ -8,38 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var listsManager = ListsManager()
+    
+    var allItems : [ListItem] = []
+    
     var body: some View {
-        VStack {
-            HStack (spacing: 20) {
-                Text("To-do Lists")
-                    .font(.system(size: 30))
+        NavigationView{
+            VStack {
+                HStack (spacing: 20) {
+                    Text("To-do Lists")
+                        .font(.system(size: 30))
+                    
+                    Spacer()
+                    
+                    //button
+                    Image(systemName: "gearshape")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                    
+                    NavigationLink{
+                        NewItemView()
+                            .environmentObject(ListsManager())
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.black)
+                    }
+                }
                 
+                //click on specific lists rather than seeing all the lists
+                Rectangle()
+                    .frame(height: 200)
+                    .foregroundColor(Color("AccentColor"))
+                    .cornerRadius(20)
+                    .shadow(radius: 2)
+                
+                List(0..<allItems.count, id: \.self) { index in
+                    ListCard(listItem: allItems[index])
+                }
                 Spacer()
                 
-                //button
-                Image(systemName: "gearshape")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                
-                //button
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: 25, height: 25)
             }
-            
-            //click on specific lists rather than seeing all the lists
-            Rectangle()
-                .frame(height: 200)
-                .foregroundColor(Color("AccentColor"))
-                .cornerRadius(20)
-                .shadow(radius: 2)
-
-            
-            ListItem()
-            Spacer()
-            
+            .padding()
         }
-        .padding()
     }
 }
 

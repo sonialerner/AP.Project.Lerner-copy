@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct ListItem: View {
+struct ListCard: View {
+    
+        var listItem : ListItem
+    
     var body: some View {
         HStack {
             //option 1: refactor so "square" gets changed to a func in ListsManager and that function returns either "square" or "checkmark.square"
@@ -18,7 +21,7 @@ struct ListItem: View {
                 .padding()
             
             //refactor placeholder name
-            Text("Feed the dog")
+            Text(listItem.name)
                 .frame(height: 50)
             
             Spacer()
@@ -28,6 +31,6 @@ struct ListItem: View {
 
 struct ListItem_Previews: PreviewProvider {
     static var previews: some View {
-        ListItem()
+        ListCard(listItem: ListItem(name: "", category: ""))
     }
 }

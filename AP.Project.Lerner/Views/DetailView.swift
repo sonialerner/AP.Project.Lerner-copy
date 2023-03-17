@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    
     var body: some View {
         VStack {
             HStack {
@@ -20,7 +21,8 @@ struct DetailView: View {
             }
             
             //for each loop here
-            ListItem()
+            //ADD IN ARGUMENTS FOR LIST CARD SO IT WORKS
+//            ListCard()
                 .padding(.horizontal)
             Spacer()
         }

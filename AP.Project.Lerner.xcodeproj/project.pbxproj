@@ -14,9 +14,10 @@
 		E031C9F129BF60C3004D4D27 /* ListsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9F029BF60C3004D4D27 /* ListsManager.swift */; };
 		E031C9F629BF612C004D4D27 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9F529BF612C004D4D27 /* DetailView.swift */; };
 		E031C9F829BF6150004D4D27 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9F729BF6150004D4D27 /* SettingsView.swift */; };
-		E031C9FA29BF6309004D4D27 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9F929BF6309004D4D27 /* ListItem.swift */; };
+		E031C9FA29BF6309004D4D27 /* ListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9F929BF6309004D4D27 /* ListCard.swift */; };
 		E031C9FC29C20A3E004D4D27 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9FB29C20A3E004D4D27 /* SettingsItem.swift */; };
 		E031C9FE29C20BA9004D4D27 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9FD29C20BA9004D4D27 /* NewItemView.swift */; };
+		E031CA0029C4A87F004D4D27 /* ListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9FF29C4A87F004D4D27 /* ListItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +29,10 @@
 		E031C9F029BF60C3004D4D27 /* ListsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsManager.swift; sourceTree = "<group>"; };
 		E031C9F529BF612C004D4D27 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E031C9F729BF6150004D4D27 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		E031C9F929BF6309004D4D27 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		E031C9F929BF6309004D4D27 /* ListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCard.swift; sourceTree = "<group>"; };
 		E031C9FB29C20A3E004D4D27 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		E031C9FD29C20BA9004D4D27 /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
+		E031C9FF29C4A87F004D4D27 /* ListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		E031C9F229BF60CC004D4D27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E031C9FF29C4A87F004D4D27 /* ListItems.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,7 +106,7 @@
 		E031C9F429BF60DA004D4D27 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E031C9F929BF6309004D4D27 /* ListItem.swift */,
+				E031C9F929BF6309004D4D27 /* ListCard.swift */,
 				E031C9FB29C20A3E004D4D27 /* SettingsItem.swift */,
 			);
 			path = Components;
@@ -180,13 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E031C9FE29C20BA9004D4D27 /* NewItemView.swift in Sources */,
-				E031C9FA29BF6309004D4D27 /* ListItem.swift in Sources */,
+				E031C9FA29BF6309004D4D27 /* ListCard.swift in Sources */,
 				E031C9F829BF6150004D4D27 /* SettingsView.swift in Sources */,
 				E031C9FC29C20A3E004D4D27 /* SettingsItem.swift in Sources */,
 				E031C9E529BF5C4A004D4D27 /* ContentView.swift in Sources */,
 				E031C9F629BF612C004D4D27 /* DetailView.swift in Sources */,
 				E031C9F129BF60C3004D4D27 /* ListsManager.swift in Sources */,
 				E031C9E329BF5C4A004D4D27 /* AP_Project_LernerApp.swift in Sources */,
+				E031CA0029C4A87F004D4D27 /* ListItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
