@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     
+    var listName : String
+    
     var body: some View {
         VStack {
             HStack {
@@ -31,6 +33,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(listName: "To do list")
     }
 }

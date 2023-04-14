@@ -23,9 +23,14 @@ struct ContentView: View {
                     Spacer()
                     
                     //button
-                    Image(systemName: "gearshape")
-                        .resizable()
-                        .frame(width: 25, height: 25)
+                    NavigationLink{
+                        SettingsView()
+                            .environmentObject(ListsManager())
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                    }
                     
                     NavigationLink{
                         NewItemView()
@@ -51,7 +56,10 @@ struct ContentView: View {
                 .shadow(radius: 2)
                 
                 List(0..<allItems.count, id: \.self) { index in
+                    //refactor "To do list" to unique list names
+                    NavigationLink(destination: DetailView(listName: "To do List")) {
                     ListCard(listItem: allItems[index])
+                }
                 }
                 Spacer()
                 

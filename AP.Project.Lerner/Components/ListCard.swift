@@ -9,15 +9,21 @@ import SwiftUI
 
 struct ListCard: View {
     
-        var listItem : ListItem
+    var listItem : ListItem
+    @State var isChecked : Bool = false
     
     var body: some View {
         HStack {
-            //option 1: refactor so "square" gets changed to a func in ListsManager and that function returns either "square" or "checkmark.square"
-            Image(systemName: "square")
+            Image(systemName: isChecked ? "checkmark.square" : "square" )
+            //add strikethrough to text if isChecked = true
+                .onTapGesture{
+                    if isChecked == false{
+                        isChecked = true
+                    } else {
+                        isChecked = false
+                    }
+                }
             //option 2: this line becomes: listItem.isCompleted() ? "checkmark.square" : "square" and then func isCompleted() gets created in ListsManager
-            
-            //option 2 is probably more readable
                 .padding()
             
             //refactor placeholder name

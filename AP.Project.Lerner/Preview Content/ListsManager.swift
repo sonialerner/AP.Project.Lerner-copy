@@ -11,14 +11,34 @@ class ListsManager : ObservableObject {
     
     @Published var allItems : [ListItem] = []
     
+    
+    
     // isChecked {
     //    remove from list
     // }
     
-    // func addListItem
+    func addListItem(_ itemName: String, designatedList: String) {
+        //        throws error because designatedList is a let constant
+        //        designatedList.append(itemName)
+    }
     
-    // func filteredList(_ items: userItems, _ targetCategory: whatever category they clicked on on the home page) -> [Item] {
-    //      takes in the whole list and filters it to only return items in a specific category
-    // }
+//   target category = whatever category they clicked on on the home page
+    func filteredList(_ items: [ListItem], _ targetCategory: String) -> [ListItem] {
+     
+        var list : [ListItem] = []
+        
+        for item in items {
+            if item.category == targetCategory {
+                list.append(item)
+            }
+        }
+        return list
+        
+    }
+    
+    func isCompleted(isCompleted: Bool) -> Bool {
+        return true
+    }
     
 }
+
