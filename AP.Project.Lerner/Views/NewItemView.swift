@@ -33,14 +33,14 @@ struct NewItemView: View {
                     TextField("List", text: $list)
                         .font(.system(size: 20))
                     
-                    Section {
-                        Picker("Appearance", selection: $selectedCategory) {
-                            //abstract these options so that the options are what the user inputs
-                            Text("Low Priority").tag("Low Priority")
-                            Text("Medium Priority").tag("Medium Priority")
-                            Text("High Priority").tag("High Priority")
-                        }
-                    }
+//                    Section {
+//                        Picker("Appearance", selection: $selectedCategory) {
+//                            //abstract these options so that the options are what the user inputs
+//                            Text("Low Priority").tag("Low Priority")
+//                            Text("Medium Priority").tag("Medium Priority")
+//                            Text("High Priority").tag("High Priority")
+//                        }
+//                    }
                     
                 }
                 .frame(width: 250, height: 500, alignment: .leading)
@@ -51,7 +51,7 @@ struct NewItemView: View {
                         let newItem = ListItem(name: name, category: selectedCategory, list: list)
                         listsManager.allItems.append(newItem)
                     } label: {
-                        NavigationLink(destination: ContentView()) {
+//                        NavigationLink(destination: ContentView()) {
                         ZStack{
                             Rectangle()
                                 .foregroundColor(Color("AccentColor"))
@@ -61,7 +61,7 @@ struct NewItemView: View {
                                 .frame(width: 30, height: 30)
                                 .foregroundColor(.white)
                         }
-                    }
+//                    }
                 }
                 
             }
