@@ -13,7 +13,7 @@ struct NewItemView: View {
     
     @State private var name : String = ""
     @State private var selectedCategory : String = ""
-
+    @State private var list : String = ""
     
     var body: some View {
         NavigationView{
@@ -30,6 +30,9 @@ struct NewItemView: View {
                     TextField("Name", text: $name)
                         .font(.system(size: 20))
                     
+                    TextField("List", text: $list)
+                        .font(.system(size: 20))
+                    
                     Section {
                         Picker("Appearance", selection: $selectedCategory) {
                             //abstract these options so that the options are what the user inputs
@@ -44,11 +47,11 @@ struct NewItemView: View {
                 .padding()
                 
                 //button to add item and nav link to take user back to main page
-                NavigationLink(destination: ContentView()) {
                     Button {
-                        let newItem = ListItem(name: name, category: selectedCategory)
+                        let newItem = ListItem(name: name, category: selectedCategory, list: list)
                         listsManager.allItems.append(newItem)
                     } label: {
+                        NavigationLink(destination: ContentView()) {
                         ZStack{
                             Rectangle()
                                 .foregroundColor(Color("AccentColor"))

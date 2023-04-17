@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct ListItem: Hashable {
-     
- var name : String
- var category : String
-     
+struct ListItem: Identifiable {
+    let id = UUID()
+    var name : String
+    var category : String
+    var list : String
+//    var isChecked : Bool = false
  }
 

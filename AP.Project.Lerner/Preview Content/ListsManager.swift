@@ -22,9 +22,9 @@ class ListsManager : ObservableObject {
         //        designatedList.append(itemName)
     }
     
-//   target category = whatever category they clicked on on the home page
+    //   target category = whatever category they clicked on on the home page
     func filteredList(_ items: [ListItem], _ targetCategory: String) -> [ListItem] {
-     
+        
         var list : [ListItem] = []
         
         for item in items {
@@ -35,10 +35,14 @@ class ListsManager : ObservableObject {
         return list
         
     }
-    
-    func isCompleted(isCompleted: Bool) -> Bool {
-        return true
-    }
-    
+    //
+    //    func isChecked(itemToBeChecked: ListItem) -> Bool {
+    //        if itemToBeChecked.isChecked == false{
+    //            return true
+    //        } else {
+    //            return false
+    //        }
+    //    }
+    //}
+    //
 }
-

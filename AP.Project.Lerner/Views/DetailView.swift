@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     
+    @EnvironmentObject var listsManager : ListsManager
+    
     var listName : String
     
     var body: some View {
@@ -25,6 +27,11 @@ struct DetailView: View {
             //for each loop here
             //ADD IN ARGUMENTS FOR LIST CARD SO IT WORKS
 //            ListCard()
+            ForEach(listsManager.allItems, id: \.id) {
+                item in
+                ListCard(listItem: item)
+                    .environmentObject(listsManager)
+            }
                 .padding(.horizontal)
             Spacer()
         }
@@ -34,5 +41,6 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(listName: "To do list")
+            .environmentObject(ListsManager())
     }
 }

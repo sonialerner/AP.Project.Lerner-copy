@@ -47,7 +47,10 @@ struct ContentView: View {
                 VStack{
                     HStack{
                         //categories here
-                        Text("Placeholder")
+                        NavigationLink(destination: DetailView(listName: "To do List").environmentObject(listsManager)) {
+                            Text("Placeholder")
+                                .foregroundColor(.black)
+                        }
                     }
                 }
                 .frame(width: 360, height: 220)
@@ -57,7 +60,6 @@ struct ContentView: View {
                 
                 List(0..<allItems.count, id: \.self) { index in
                     //refactor "To do list" to unique list names
-                    NavigationLink(destination: DetailView(listName: "To do List")) {
                     ListCard(listItem: allItems[index])
                 }
                 }
@@ -67,7 +69,7 @@ struct ContentView: View {
             .padding()
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

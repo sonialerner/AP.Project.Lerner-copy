@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Lists: Hashable {
+struct Lists: Identifiable {    
+    var id = UUID()
     var listName : String
 }
