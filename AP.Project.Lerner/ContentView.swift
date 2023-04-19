@@ -10,9 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var listsManager = ListsManager()
-    
-//    var allItems : [ListItem] = []
-    
+        
     var body: some View {
         NavigationView{
             VStack {
