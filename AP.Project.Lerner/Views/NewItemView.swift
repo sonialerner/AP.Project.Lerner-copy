@@ -33,14 +33,14 @@ struct NewItemView: View {
                     TextField("List", text: $list)
                         .font(.system(size: 20))
                     
-//                    Section {
-//                        Picker("Appearance", selection: $selectedCategory) {
-//                            //abstract these options so that the options are what the user inputs
-//                            Text("Low Priority").tag("Low Priority")
-//                            Text("Medium Priority").tag("Medium Priority")
-//                            Text("High Priority").tag("High Priority")
-//                        }
-//                    }
+                    Section {
+                        Picker("Appearance", selection: $selectedCategory) {
+                            //abstract these options so that the options are what the user inputs
+                            Text("Low Priority").tag("Low Priority")
+                            Text("Medium Priority").tag("Medium Priority")
+                            Text("High Priority").tag("High Priority")
+                        }
+                    }
                     
                 }
                 .frame(width: 250, height: 500, alignment: .leading)
