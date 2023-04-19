@@ -29,7 +29,7 @@ struct DetailView: View {
 //            ListCard()
             ForEach(listsManager.allItems, id: \.id) {
                 item in
-                ListCard(listItem: item)
+                ListCard(itemName: item.name)
                     .environmentObject(listsManager)
             }
                 .padding(.horizontal)

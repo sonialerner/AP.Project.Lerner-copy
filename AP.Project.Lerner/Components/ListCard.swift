@@ -12,7 +12,7 @@ struct ListCard: View {
     @EnvironmentObject var listsManager : ListsManager
     
     @State var isChecked = false
-    var listItem : ListItem
+    var itemName : String
     
     var body: some View {
         HStack {
@@ -30,7 +30,7 @@ struct ListCard: View {
                 .padding()
             
             //refactor placeholder name
-                Text(listItem.name)
+                Text(itemName)
                     .frame(height: 50)
             
             Spacer()
@@ -40,7 +40,7 @@ struct ListCard: View {
     
     struct ListItem_Previews: PreviewProvider {
         static var previews: some View {
-            ListCard(listItem: ListItem(name: "", category: "", list: ""))
+            ListCard(itemName: "")
         }
     }
 }

@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @StateObject var listsManager = ListsManager()
     
-    var allItems : [ListItem] = []
+//    var allItems : [ListItem] = []
     
     var body: some View {
         NavigationView{
@@ -45,34 +45,39 @@ struct ContentView: View {
                 
                 //click on specific lists rather than seeing all the lists
                 VStack{
-                    HStack{
-                        //categories here
-                        NavigationLink(destination: DetailView(listName: "To do List").environmentObject(listsManager)) {
-                            Text("Placeholder")
-                                .foregroundColor(.black)
-                        }
+                    //                    HStack{
+                    //                        //categories here
+                    //                        NavigationLink(destination: DetailView(listName: "To do List").environmentObject(listsManager)) {
+                    //                            Text("Placeholder")
+                    //                                .foregroundColor(.black)
+                    //                        }
+                    //                    }
+                    //                }
+                    //                .frame(width: 360, height: 220)
+                    //                .background(Color("AccentColor"))
+                    //                .cornerRadius(20)
+                    //                .shadow(radius: 2)
+                    
+                    //                Text(listsManager.allItems[0])
+                    
+                    ForEach(listsManager.allItems) {
+                        item in
+                        ListCard(itemName: item.name)
+                            .environmentObject(listsManager)
                     }
+                    .padding(.horizontal)
+                    Spacer()
                 }
-                .frame(width: 360, height: 220)
-                .background(Color("AccentColor"))
-                .cornerRadius(20)
-                .shadow(radius: 2)
-                
-                List(0..<allItems.count, id: \.self) { index in
-                    //refactor "To do list" to unique list names
-                    ListCard(listItem: allItems[index])
-                }
-                }
-                Spacer()
                 
             }
             .padding()
         }
     }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
