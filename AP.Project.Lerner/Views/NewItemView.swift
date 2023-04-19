@@ -12,8 +12,8 @@ struct NewItemView: View {
     @EnvironmentObject var listsManager : ListsManager
 
     @State private var name : String = ""
-    @State private var selectedCategory : String = ""
-    @State private var list : String = ""
+//    @State private var selectedCategory : String = ""
+//    @State private var list : String = ""
     @State var numClicks = 0
     
     var body: some View {
@@ -33,19 +33,19 @@ struct NewItemView: View {
 
                     TextField("Name", text: $name)
                         .font(.system(size: 20))
-
-                    TextField("List", text: $list)
-                        .font(.system(size: 20))
-
-                    Section {
-                        Picker("Priority", selection: $selectedCategory) {
-                            //abstract these options so that the options are what the user inputs
-                            Text("Low Priority").tag("Low Priority")
-                            Text("Medium Priority").tag("Medium Priority")
-                            Text("High Priority").tag("High Priority")
-                        }
-        
-                    }
+//
+//                    TextField("List", text: $list)
+//                        .font(.system(size: 20))
+//
+//                    Section {
+//                        Picker("Priority", selection: $selectedCategory) {
+//                            //abstract these options so that the options are what the user inputs
+//                            Text("Low Priority").tag("Low Priority")
+//                            Text("Medium Priority").tag("Medium Priority")
+//                            Text("High Priority").tag("High Priority")
+//                        }
+//
+//                    }
 
                 }
                 .frame(width: 250, height: 500, alignment: .leading)
@@ -53,7 +53,7 @@ struct NewItemView: View {
                 
                 //button to add item and nav link to take user back to main page
                     Button {
-                        let newItem = ListItem(name: name, category: selectedCategory, list: list)
+                        let newItem = ListItem(name: name)
                         listsManager.allItems.append(newItem)
                         numClicks += 1
                     } label: {

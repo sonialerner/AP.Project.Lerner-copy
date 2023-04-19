@@ -24,8 +24,8 @@ struct ContentView: View {
                     
                     //button
                     NavigationLink{
-                        FilterView()
-                            .environmentObject(ListsManager())
+//                        FilterView()
+//                            .environmentObject(ListsManager())
                     } label: {
                         Image(systemName: "slider.horizontal.3")
                             .resizable()
@@ -45,7 +45,7 @@ struct ContentView: View {
                 }
                 
                 //click on specific lists rather than seeing all the lists
-                VStack{
+//                VStack{
                     //                    HStack{
                     //                        //categories here
                     //                        NavigationLink(destination: DetailView(listName: "To do List").environmentObject(listsManager)) {
@@ -69,7 +69,7 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                     Spacer()
-                }
+//                }
                 
             }
             .padding()

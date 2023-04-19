@@ -12,7 +12,7 @@ struct ListCard: View {
     @EnvironmentObject var listsManager : ListsManager
     
     @State var isChecked = false
-    var itemName : String
+    @State var itemName : String
     
     var body: some View {
         HStack {

@@ -1,13 +1,14 @@
+////
+////  Lists.swift
+////  AP.Project.Lerner
+////
+////  Created by Sonia Lerner24 on 4/13/23.
+////
 //
-//  Lists.swift
-//  AP.Project.Lerner
+//import Foundation
 //
-//  Created by Sonia Lerner24 on 4/13/23.
+//struct Lists: Identifiable {
+//    var id = UUID()
+//    var listName : String
+//}
 //
-
-import Foundation
-
-struct Lists: Identifiable {    
-    var id = UUID()
-    var listName : String
-}
