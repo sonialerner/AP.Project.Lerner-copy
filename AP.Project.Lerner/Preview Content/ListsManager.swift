@@ -12,6 +12,10 @@ class ListsManager : ObservableObject {
     
     @Published var allItems : [ListItem] = []
     
+    init(){
+        allItems = []
+    }
+    
     // isChecked {
     //    remove from list
     // }
