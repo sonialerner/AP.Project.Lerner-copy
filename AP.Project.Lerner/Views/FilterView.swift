@@ -9,7 +9,7 @@ import SwiftUI
 
 //stop coding this. go make your mvp. 
 
-struct SettingsView: View {
+struct FilterView: View {
     var body: some View {
         VStack {
             HStack {
@@ -27,6 +27,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        FilterView()
     }
 }

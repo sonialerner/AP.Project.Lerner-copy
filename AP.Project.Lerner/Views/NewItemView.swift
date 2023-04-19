@@ -38,12 +38,13 @@ struct NewItemView: View {
                         .font(.system(size: 20))
 
                     Section {
-                        Picker("Appearance", selection: $selectedCategory) {
+                        Picker("Priority", selection: $selectedCategory) {
                             //abstract these options so that the options are what the user inputs
                             Text("Low Priority").tag("Low Priority")
                             Text("Medium Priority").tag("Medium Priority")
                             Text("High Priority").tag("High Priority")
                         }
+        
                     }
 
                 }

@@ -24,12 +24,13 @@ struct ContentView: View {
                     
                     //button
                     NavigationLink{
-                        SettingsView()
+                        FilterView()
                             .environmentObject(ListsManager())
                     } label: {
-                        Image(systemName: "gearshape")
+                        Image(systemName: "slider.horizontal.3")
                             .resizable()
                             .frame(width: 25, height: 25)
+                            .foregroundColor(.black)
                     }
                     
                     NavigationLink{
@@ -59,11 +60,12 @@ struct ContentView: View {
                     //                .shadow(radius: 2)
                     
                     //                Text(listsManager.allItems[0])
-                    
-                    ForEach(listsManager.allItems) {
-                        item in
-                        ListCard(itemName: item.name)
-                            .environmentObject(listsManager)
+                    List{
+                        ForEach(listsManager.allItems) {
+                            item in
+                            ListCard(itemName: item.name)
+                                .environmentObject(listsManager)
+                        }
                     }
                     .padding(.horizontal)
                     Spacer()
