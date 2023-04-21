@@ -11,16 +11,22 @@ import SwiftUI
 
 struct FilterView: View {
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
-                Text("Settings")
-                    .font(.system(size:25))
+                Text("Filter Preferences")
+                    .font(.system(size: 30))
                     .padding()
                 Spacer()
             }
 
-            Text("Themes")
+            Text("Displayed Lists")
+                .padding()
+                .font(.system(size: 23))
             Spacer()
+            
+            List {
+//                ForEach(list)
+            }
         }
     }
 }

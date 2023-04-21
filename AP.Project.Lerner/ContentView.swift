@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @StateObject var listsManager = ListsManager()
     
-    @State var listItems : [ListItem] = []
+//    @State var listItems : [ListItem] = []
     
     @State private var name : String = ""
     @State private var selectedCategory : String = ""
@@ -91,6 +91,7 @@ struct ContentView: View {
                         listsManager.allItems.append(newItem)
 //                        numClicks += 1
                         self.name = ""
+                        self.selectedCategory = ""
                     } label: {
                         ZStack{
                             Rectangle()
