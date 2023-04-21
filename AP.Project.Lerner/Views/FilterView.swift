@@ -10,6 +10,9 @@ import SwiftUI
 //stop coding this. go make your mvp.
 
 struct FilterView: View {
+    
+    @EnvironmentObject var listsManager : ListsManager
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -24,9 +27,15 @@ struct FilterView: View {
                 .font(.system(size: 23))
             Spacer()
             
-            List {
-//                ForEach(list)
+            List{
+                ForEach(listsManager.allItems) {
+                    item in
+                    ListCard(itemName: item.name)
+                        .environmentObject(listsManager)
+                }
             }
+            .padding(.horizontal)
+            Spacer()
         }
     }
 }
