@@ -43,5 +43,6 @@ struct FilterView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         FilterView()
+            .environmentObject(ListsManager())
     }
 }
