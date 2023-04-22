@@ -87,7 +87,7 @@ struct ContentView: View {
                     }
                     
                     Button {
-                        let newItem = ListItem(name: name)
+                        let newItem = ListItem(name: name, category: selectedCategory)
                         listsManager.allItems.append(newItem)
 //                        numClicks += 1
                         self.name = ""

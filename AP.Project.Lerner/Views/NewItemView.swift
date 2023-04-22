@@ -53,8 +53,8 @@ struct NewItemView: View {
                 
                 //button to add item and nav link to take user back to main page
                     Button {
-                        let newItem = ListItem(name: name)
-                        listsManager.allItems.append(newItem)
+//                        let newItem = ListItem(name: name, category: <#T##String#>)
+//                        listsManager.allItems.append(newItem)
                         numClicks += 1
                     } label: {
 //                        NavigationLink(destination: ContentView()) {

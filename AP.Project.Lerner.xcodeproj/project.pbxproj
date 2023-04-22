@@ -18,6 +18,7 @@
 		E031C9FC29C20A3E004D4D27 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9FB29C20A3E004D4D27 /* SettingsItem.swift */; };
 		E031C9FE29C20BA9004D4D27 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9FD29C20BA9004D4D27 /* NewItemView.swift */; };
 		E031CA0029C4A87F004D4D27 /* ListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031C9FF29C4A87F004D4D27 /* ListItems.swift */; };
+		E04D38D229F44FF400BCD833 /* FilterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D38D129F44FF400BCD833 /* FilterCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E031C9FB29C20A3E004D4D27 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		E031C9FD29C20BA9004D4D27 /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		E031C9FF29C4A87F004D4D27 /* ListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItems.swift; sourceTree = "<group>"; };
+		E04D38D129F44FF400BCD833 /* FilterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E031C9F929BF6309004D4D27 /* ListCard.swift */,
+				E04D38D129F44FF400BCD833 /* FilterCard.swift */,
 				E031C9FB29C20A3E004D4D27 /* SettingsItem.swift */,
 			);
 			path = Components;
@@ -187,6 +190,7 @@
 				E031C9F829BF6150004D4D27 /* FilterView.swift in Sources */,
 				E031C9FC29C20A3E004D4D27 /* SettingsItem.swift in Sources */,
 				E031C9E529BF5C4A004D4D27 /* ContentView.swift in Sources */,
+				E04D38D229F44FF400BCD833 /* FilterCard.swift in Sources */,
 				E031C9F629BF612C004D4D27 /* DetailView.swift in Sources */,
 				E031C9F129BF60C3004D4D27 /* ListsManager.swift in Sources */,
 				E031C9E329BF5C4A004D4D27 /* AP_Project_LernerApp.swift in Sources */,

@@ -39,22 +39,22 @@ class ListsManager : ObservableObject {
 
     }
     
-    func filterCategories( _ items: [ListItem]) -> [String] {
-        
-        var categories : [String] = []
-        
-        for item in 0...items.count - 1 {
-            for cat in 0...categories.count - 1 {
-                if item.category == cat {
-                    continue
-                } else {
-                    categories.append(item.category)
-                }
-            }
-        }
-        
-        return categories
-    }
+//    func filterCategories( _ items: [ListItem]) -> [String] {
+//
+//        var categories : [String] = []
+//
+//        for item in 0...items.count - 1 {
+//            for cat in 0...categories.count - 1 {
+//                if item.category == cat { THIS LINE THROWS ERROR
+//                    continue
+//                } else {
+//                    categories.append(item.category) THIS LINE THROWS ERROR
+//                }
+//            }
+//        }
+//
+//        return categories
+//    }
     
 }
 

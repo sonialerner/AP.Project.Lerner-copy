@@ -27,14 +27,14 @@ struct FilterView: View {
                 .font(.system(size: 23))
             Spacer()
             
-            List{
-                ForEach(listsManager.allItems) {
-                    item in
-                    ListCard(itemName: item.name)
-                        .environmentObject(listsManager)
-                }
-            }
-            .padding(.horizontal)
+//            List{
+//                ForEach(listsManager.filterCategories(listsManager.allItems)) {
+//                    item in
+//                    FilterCard(category: item.category)
+//                        .environmentObject(listsManager)
+//                }
+//            }
+//            .padding(.horizontal)
             Spacer()
         }
     }
