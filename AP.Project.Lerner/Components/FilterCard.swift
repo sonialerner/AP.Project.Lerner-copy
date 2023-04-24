@@ -16,7 +16,7 @@ struct FilterCard: View {
                 Toggle(category, isOn: $isDisplayed)
                     .tint(Color("AccentColor"))
                     .padding()
-   
+
     }
 }
 

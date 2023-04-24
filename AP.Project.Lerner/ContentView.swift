@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var selectedCategory : String = ""
 //    @State private var list : String = ""
     @State var numClicks = 0
+    
+    @State var displayedList : String = ""
         
     var body: some View {
         NavigationView{
@@ -45,13 +47,16 @@ struct ContentView: View {
 
                                 Spacer()
                                 
-                                Text("Displayed Lists:")
+                                Text("Displayed Items:")
                                     .font(.headline)
                                     .padding()
                                 
-                                FilterCard(category: "High Priority")
-                                FilterCard(category: "Medium Priority")
-                                FilterCard(category: "Low Priority")
+                                Picker("Displayed Items", selection: $displayedList) {
+                                    Text("All Items").tag("All")
+                                    Text("Low Priority").tag("Low")
+                                    Text("Medium Priority").tag("Medium")
+                                    Text("High Priority").tag("High")
+                                }
                                 
                                 Spacer()
                             }
@@ -64,7 +69,7 @@ struct ContentView: View {
 
                                 
                     List{
-                        ForEach(listsManager.allItems) {
+                        ForEach(listsManager.filteredList(listsManager.allItems, displayedList)) {
                             item in
                             ListCard(itemName: item.name)
                                 .environmentObject(listsManager)
