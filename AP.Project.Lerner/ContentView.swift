@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @StateObject var listsManager = ListsManager()
     
-//    @State var listItems : [ListItem] = []
+    @State private var showingPopover = false
     
     @State private var name : String = ""
     @State private var selectedCategory : String = ""
@@ -21,50 +21,47 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack {
+                
                 HStack (spacing: 20) {
                     Text("To-do Lists")
                         .font(.system(size: 30))
                     Spacer()
                     
-                    //button
-                    NavigationLink{
-                        FilterView()
-                            .environmentObject(ListsManager())
+                    //part of button code via https://www.hackingwithswift.com/quick-start/swiftui/how-to-show-a-popover-view
+                    Button() {
+                            showingPopover = true
                     } label: {
                         Image(systemName: "slider.horizontal.3")
                             .resizable()
                             .frame(width: 25, height: 25)
                             .foregroundColor(.black)
                     }
+                        .popover(isPresented: $showingPopover) {
+                            
+                            VStack{
+                                Image(systemName: "minus")
+                                    .frame(width: 100, height: 10)
+                                    .padding()
+
+                                Spacer()
+                                
+                                Text("Displayed Lists:")
+                                    .font(.headline)
+                                    .padding()
+                                
+                                FilterCard(category: "High Priority")
+                                FilterCard(category: "Medium Priority")
+                                FilterCard(category: "Low Priority")
+                                
+                                Spacer()
+                            }
+                        
+                        }
                     
-//                    NavigationLink{
-//                        NewItemView()
-//                            .environmentObject(ListsManager())
-//                    } label: {
-//                        Image(systemName: "plus")
-//                            .resizable()
-//                            .frame(width: 25, height: 25)
-//                            .foregroundColor(.black)
-//                    }
                 }
 
                 
-                //click on specific lists rather than seeing all the lists
-//                VStack{
-                    //                    HStack{
-                    //                        //categories here
-                    //                        NavigationLink(destination: DetailView(listName: "To do List").environmentObject(listsManager)) {
-                    //                            Text("Placeholder")
-                    //                                .foregroundColor(.black)
-                    //                        }
-                    //                    }
-                    //                }
-                    //                .frame(width: 360, height: 220)
-                    //                .background(Color("AccentColor"))
-                    //                .cornerRadius(20)
-                    //                .shadow(radius: 2)
-                    
-                    //                Text(listsManager.allItems[0])
+
                                 
                     List{
                         ForEach(listsManager.allItems) {
@@ -82,8 +79,19 @@ struct ContentView: View {
                             .font(.system(size: 20))
                             .padding(.horizontal)
                         
-                        TextField("Category", text: $selectedCategory)
-                            .padding(.horizontal, 25)
+                        Text("Priority level:")
+                            .frame(alignment: .leading)
+                            .padding(.horizontal)
+                        
+                        Section {
+                            Picker("Priority", selection: $selectedCategory) {
+                                Text("Low").tag("Low Priority")
+                                Text("Medium").tag("Medium Priority")
+                                Text("High").tag("High Priority")
+                            }
+                                .pickerStyle(.segmented)
+                        }
+
                     }
                     
                     Button {
@@ -107,7 +115,7 @@ struct ContentView: View {
                     }
                 }
                 .edgesIgnoringSafeArea(.all)
-                .frame(maxWidth: .infinity, maxHeight: 50)
+                .frame(maxWidth: .infinity, maxHeight: 90)
                 .padding()
                 .background(Color(hue: 0.00, saturation: 0.00, brightness: 0.95))
                 .cornerRadius(4)
