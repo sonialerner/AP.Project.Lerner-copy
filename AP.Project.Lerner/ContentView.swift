@@ -2,22 +2,23 @@
 //  ContentView.swift
 //  AP.Project.Lerner
 //
-//  Created by Sonia Lerner24 on 3/13/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     
+    //communicating controller with content view
     @StateObject var listsManager = ListsManager()
     
+    //bool to show/not show popover view
     @State private var showingPopover = false
     
+    //variables regarding a new item that may be added
     @State private var name : String = ""
     @State private var selectedCategory : String = ""
-//    @State private var list : String = ""
-    @State var numClicks = 0
     
+    //variable controlling what item category is displayed
     @State var displayedList : String = ""
         
     var body: some View {
@@ -64,10 +65,7 @@ struct ContentView: View {
                         }
                     
                 }
-
                 
-
-                                
                     List{
                         ForEach(listsManager.filteredList(listsManager.allItems, displayedList)) {
                             item in
@@ -102,7 +100,6 @@ struct ContentView: View {
                     Button {
                         let newItem = ListItem(name: name, category: selectedCategory)
                         listsManager.allItems.append(newItem)
-//                        numClicks += 1
                         self.name = ""
                         self.selectedCategory = ""
                     } label: {
@@ -124,7 +121,6 @@ struct ContentView: View {
                 .padding()
                 .background(Color(hue: 0.00, saturation: 0.00, brightness: 0.95))
                 .cornerRadius(4)
-                
             }
             .padding()
         }
