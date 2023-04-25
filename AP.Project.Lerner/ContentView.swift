@@ -73,8 +73,8 @@ struct ContentView: View {
                                 .environmentObject(listsManager)
                         }
                     }
-//                    .padding(.horizontal)
-                    Spacer()
+                
+                Spacer()
                 
                 HStack{
                     VStack(alignment: .leading){
@@ -121,7 +121,7 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: 90)
                 .padding()
                 .background(Color(hue: 0.00, saturation: 0.00, brightness: 0.95))
-                .cornerRadius(4)
+                .cornerRadius(6)
             }
             .padding()
         }
