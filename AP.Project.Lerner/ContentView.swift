@@ -73,18 +73,19 @@ struct ContentView: View {
                                 .environmentObject(listsManager)
                         }
                     }
-                    .padding(.horizontal)
+//                    .padding(.horizontal)
                     Spacer()
                 
                 HStack{
-                    VStack{
-                        TextField("Add New Item", text: $name)
+                    VStack(alignment: .leading){
+                        TextField("New item name", text: $name)
                             .font(.system(size: 20))
                             .padding(.horizontal)
                         
                         Text("Priority level:")
                             .frame(alignment: .leading)
                             .padding(.horizontal)
+                            .font(.system(size: 16))
                         
                         Section {
                             Picker("Priority", selection: $selectedCategory) {
@@ -106,12 +107,12 @@ struct ContentView: View {
                         ZStack{
                             Rectangle()
                                 .foregroundColor(Color("AccentColor"))
-                                .frame(maxWidth: 50, maxHeight: 50)
+                                .frame(maxWidth: 45, maxHeight: 45)
                                 .cornerRadius(6)
                             
                             Image(systemName: "plus")
                                 .resizable()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 15, height: 15)
                                 .foregroundColor(.black)
                         }
                     }

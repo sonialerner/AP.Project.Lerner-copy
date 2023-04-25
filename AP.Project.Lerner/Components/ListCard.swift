@@ -25,8 +25,6 @@ struct ListCard: View {
                         isChecked = false
                     }
                 }
-            
-            //option 2: this line becomes: listItem.isCompleted() ? "checkmark.square" : "square" and then func isCompleted() gets created in ListsManager
                 .padding()
             
             //refactor placeholder name
