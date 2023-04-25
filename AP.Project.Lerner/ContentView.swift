@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var selectedCategory : String = ""
     
     //variable controlling what item category is displayed
-    @State var displayedList : String = ""
+    @State var displayedList : String = "All Items"
         
     var body: some View {
         NavigationView{
@@ -53,10 +53,10 @@ struct ContentView: View {
                                     .padding()
                                 
                                 Picker("Displayed Items", selection: $displayedList) {
-                                    Text("All Items").tag("All")
-                                    Text("Low Priority").tag("Low")
-                                    Text("Medium Priority").tag("Medium")
-                                    Text("High Priority").tag("High")
+                                    Text("All Items").tag("All Items")
+                                    Text("Low Priority").tag("Low Priority")
+                                    Text("Medium Priority").tag("Medium Priority")
+                                    Text("High Priority").tag("High Priority")
                                 }
                                 
                                 Spacer()

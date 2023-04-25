@@ -18,9 +18,13 @@ class ListsManager : ObservableObject {
 
     
     func filteredList(_ items: [ListItem], _ targetCategory: String) -> [ListItem] {
+        
+        if targetCategory == "All Items" {
+            return items
+        }
 
         var list : [ListItem] = []
-
+        
         for item in items {
             if item.category == targetCategory {
                 list.append(item)
