@@ -1,8 +1,3 @@
-//
-//  ContentView.swift
-//  AP.Project.Lerner
-//
-//
 
 import SwiftUI
 
@@ -40,7 +35,7 @@ struct ContentView: View {
                             .foregroundColor(.black)
                     }
                         .popover(isPresented: $showingPopover) {
-                            
+                            //the result of this code will be displayed if showingPopover == true
                             VStack{
                                 Image(systemName: "minus")
                                     .frame(width: 100, height: 10)
@@ -52,6 +47,7 @@ struct ContentView: View {
                                     .font(.headline)
                                     .padding()
                                 
+                                //the user can choose what category of items are displayed using this picker
                                 Picker("Displayed Items", selection: $displayedList) {
                                     Text("All Items").tag("All Items")
                                     Text("Low Priority").tag("Low Priority")
@@ -65,8 +61,9 @@ struct ContentView: View {
                         }
                     
                 }
-                
+                //list displaying list items as added by the user (output)
                     List{
+                        //call to filteredList() function so as to display items under the category selected by the user
                         ForEach(listsManager.filteredList(listsManager.allItems, displayedList)) {
                             item in
                             ListCard(itemName: item.name)
@@ -78,6 +75,7 @@ struct ContentView: View {
                 
                 HStack{
                     VStack(alignment: .leading){
+                        //text field and picker taking in user input to create a new list item
                         TextField("New item name", text: $name)
                             .font(.system(size: 20))
                             .padding(.horizontal)
@@ -99,8 +97,10 @@ struct ContentView: View {
                     }
                     
                     Button {
+                        //creating a new list item with the information the user has entered and adding it to list allItems
                         let newItem = ListItem(name: name, category: selectedCategory)
                         listsManager.allItems.append(newItem)
+                        //reseting the input fields after adding a new item
                         self.name = ""
                         self.selectedCategory = ""
                     } label: {
